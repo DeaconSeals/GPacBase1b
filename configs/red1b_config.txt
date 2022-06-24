@@ -1,0 +1,33 @@
+[fitness_kwargs]
+height = 20
+width = 35
+samples = 5
+pill_spawn=linear
+pill_density=0.05
+fruit_prob=0.1
+fruit_score=10
+agent_type=avoid
+ghost_type=chase
+
+[EA_configs]
+mu = 200
+num_children = 100
+mutation_rate = 0.2
+individual_class = binaryGenotype
+parent_selection = stochastic_universal_sampling
+survival_selection = truncation
+
+[initialization_kwargs]
+length = ${fitness_kwargs:height}*${fitness_kwargs:width}
+
+[parent_selection_kwargs]
+k = 5
+
+[recombination_kwargs]
+method = 1-point crossover
+height = ${fitness_kwargs:height}
+width = ${fitness_kwargs:width}
+
+[mutation_kwargs]
+
+[survival_selection_kwargs]
